@@ -1,0 +1,9 @@
+1.	SQUARE DIGITS
+def square_digits(a):
+	c=""
+	for i in range(len(a)):
+		b=int(a[i:i+1])**2
+		c=c+str(b)
+	print(c)
+n=input()
+square_digits(n)
