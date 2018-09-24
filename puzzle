@@ -1,0 +1,119 @@
+1.	SQUARE DIGITS
+def square_digits(a):
+	c=""
+	for i in range(len(a)):
+		b=int(a[i:i+1])**2
+		c=c+str(b)
+	print(c)
+n=input()
+square_digits(n)
+2.	Longest word
+def longest_word(a):
+	#a=a.split()
+	print(a)
+	b=max(a,key=len)
+	print(b)
+	b=' '
+	for i in a:
+		if(len(i)>=len(b)):
+			b=i
+	print(b)
+			
+n=input().split(' ')
+longest_word(n)
+
+3.REPEAT NO
+def repeatno(nlist):
+	rlist=[]
+	for i in range(len(nlist)):
+		for j in range(i+1,len(nlist)):
+			if nlist[i]==nlist[j] and nlist[i] not in rlist:
+				rlist.append(nlist[i])
+	print(rlist)
+a=input()
+repeatno(list(a))
+
+4.REPEAT METHOD 2
+
+def repeatno(nlist):
+	rlist=[]
+	for i in range(len(nlist)):
+		for j in range(i+1,len(nlist)):
+			if nlist[i]==nlist[j] and nlist[i] not in rlist:
+				rlist.append(nlist[i])
+	print(rlist)
+def repeatno2(nlist2):
+	rlist2=[]
+	dummy=[0]*len(nlist2)
+	for i in range(len(nlist2)):
+		a=nlist2[i]
+		if dummy[int(a)]==1:
+			rlist2.append(a)
+		else:
+			dummy[int(a)]=1
+	print(rlist2)
+a=input()
+repeatno(list(a))
+repeatno2(list(a))
+
+5. mindifference in list
+def mindiff(a):
+	c=[0]*(len(a)-1)
+	b=sorted(a)
+	print(b)
+	for i in range(len(b)-1):
+		diff=b[i+1]-b[i]
+		c[i]=diff
+		min1=c[0]
+	if diff<min1:
+		min1=diff
+	else:
+		min1=min1
+	print(min1)
+	print(c)
+	d=min(c)
+	print(min(c))
+	
+	for i in range(len(c)):
+		if c[i]==d:
+			print(b[i],b[i+1])
+
+
+a=[1,5,104,34,8,87,98,99]
+mindiff(a)
+6.PRIME
+for i in range(3,50):
+	count = True
+	for j in range(2,i):
+		if (i%j==0):
+			count=False
+	if count:
+		print("{0} is prime".format(i))
+import math
+for num in range(2,25):
+    if all(num%i!=0 for i in range(2,int(math.sqrt(num))+1)):
+       print(num)
+
+import math
+print 2
+for num in range(3,101,2):
+    if all(num%i!=0 for i in range(3,int(math.sqrt(num))+1, 2)):
+        print num
+
+7. magician chef
+t=input()
+t=int(t)
+while t>0:
+	n,x,s=input().split()
+	n,x,s=int(n),int(x),int(s)
+	arr=[0]*n
+	arr[x-1]=1
+	for i in range(s):
+		a1,b1=input().split()
+		a1,b1=int(a1),int(b1)
+		
+		arr[a1-1],arr[b1-1]=arr[b1-1],arr[a1-1]
+		print(arr)
+	
+	print(arr.index(1)+1)
+	t-=1
